@@ -4,10 +4,11 @@ import ext.StringIdentifiable
 import kotlin.enums.enumEntries
 
 object User : ManagedConfig("test") {
-	val option by choice("name") { TestEnum.A }
-	val optionAlt by choice("name", enumEntries<TestEnum>(),
+	val option by choice<TestEnum>()
+	val optionAlt by choice<TestEnum>(enumEntries<TestEnum>(),
 	                        StringIdentifiable.createCodec { enumValues<TestEnum>() },
-	                        EnumRenderer.default<TestEnum>()) { TestEnum.A }
+	                        EnumRenderable.default(),
+	                        )
 
 	enum class TestEnum : StringIdentifiable {
 		A, B, C;
