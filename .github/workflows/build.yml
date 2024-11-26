@@ -4,7 +4,7 @@ jobs:
     compile:
         strategy:
             matrix:
-                kotlin-version: ["2.0.20", "2.0.21", "2.1.0-RC2", "1.9.25"]
+                kotlin-version: ["2.0.20", "2.0.21", "2.1.0-RC2", "1.9.25", "1.8.21"]
         steps:
             -   uses: actions/checkout@v4
             -   name: Set up JDK 17 for x64
