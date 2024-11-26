@@ -1,0 +1,377 @@
+2024-11-26 23:05:25
+Full thread dump OpenJDK 64-Bit Server VM (17.0.13+11 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x00007b9208015490, length=20, elements={
+0x00007b93080607c0, 0x00007b9308061bf0, 0x00007b9308068280, 0x00007b9308069620,
+0x00007b930806aa20, 0x00007b930806c3e0, 0x00007b930806d900, 0x00007b9308076d50,
+0x00007b93080c3440, 0x00007b93080c5790, 0x00007b93082d1b40, 0x00007b9308337d00,
+0x00007b930833b950, 0x00007b930833d7b0, 0x00007b93080191d0, 0x00007b925c01cc70,
+0x00007b92740032a0, 0x00007b92500279f0, 0x00007b92b4000ea0, 0x00007b9274004330
+}
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 cpu=1.27ms elapsed=2528.11s tid=0x00007b93080607c0 nid=0x1958e waiting on condition  [0x00007b930c382000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@17.0.13/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@17.0.13/Reference.java:253)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@17.0.13/Reference.java:215)
+
+"Finalizer" #3 daemon prio=8 os_prio=0 cpu=0.41ms elapsed=2528.11s tid=0x00007b9308061bf0 nid=0x1958f in Object.wait()  [0x00007b930c281000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.13/Native Method)
+	- waiting on <0x00000000e000dcb0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.13/ReferenceQueue.java:155)
+	- locked <0x00000000e000dcb0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.13/ReferenceQueue.java:176)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@17.0.13/Finalizer.java:172)
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 cpu=0.28ms elapsed=2528.11s tid=0x00007b9308068280 nid=0x19590 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #5 daemon prio=9 os_prio=0 cpu=25.22ms elapsed=2528.11s tid=0x00007b9308069620 nid=0x19591 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Monitor Deflation Thread" #6 daemon prio=9 os_prio=0 cpu=82.75ms elapsed=2528.11s tid=0x00007b930806aa20 nid=0x19592 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #7 daemon prio=9 os_prio=0 cpu=3298.33ms elapsed=2528.11s tid=0x00007b930806c3e0 nid=0x19593 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #10 daemon prio=9 os_prio=0 cpu=1268.09ms elapsed=2528.11s tid=0x00007b930806d900 nid=0x19594 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Sweeper thread" #11 daemon prio=9 os_prio=0 cpu=31.62ms elapsed=2528.11s tid=0x00007b9308076d50 nid=0x19595 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" #12 daemon prio=8 os_prio=0 cpu=2.38ms elapsed=2528.09s tid=0x00007b93080c3440 nid=0x19596 in Object.wait()  [0x00007b92ce8fb000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.13/Native Method)
+	- waiting on <no object reference available>
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.13/ReferenceQueue.java:155)
+	- locked <0x00000000e001e890> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@17.0.13/CleanerImpl.java:140)
+	at java.lang.Thread.run(java.base@17.0.13/Thread.java:840)
+	at jdk.internal.misc.InnocuousThread.run(java.base@17.0.13/InnocuousThread.java:162)
+
+"Notification Thread" #13 daemon prio=9 os_prio=0 cpu=0.07ms elapsed=2528.08s tid=0x00007b93080c5790 nid=0x19597 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Timer-0" #15 daemon prio=5 os_prio=0 cpu=27.50ms elapsed=2527.92s tid=0x00007b93082d1b40 nid=0x1959a waiting on condition  [0x00007b92ce4f7000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@17.0.13/Native Method)
+	- parking to wait for  <0x00000000e04535b8> (a java.util.concurrent.locks.ReentrantReadWriteLock$NonfairSync)
+	at java.util.concurrent.locks.LockSupport.park(java.base@17.0.13/LockSupport.java:211)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(java.base@17.0.13/AbstractQueuedSynchronizer.java:715)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(java.base@17.0.13/AbstractQueuedSynchronizer.java:938)
+	at java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.lock(java.base@17.0.13/ReentrantReadWriteLock.java:959)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl$shutdownWithDelay$$inlined$schedule$1.run(Timer.kt:154)
+	at java.util.TimerThread.mainLoop(java.base@17.0.13/Timer.java:566)
+	at java.util.TimerThread.run(java.base@17.0.13/Timer.java:516)
+
+"RMI TCP Accept-17860" #16 daemon prio=5 os_prio=0 cpu=2.59ms elapsed=2527.89s tid=0x00007b9308337d00 nid=0x1959b runnable  [0x00007b92ce3f6000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.Net.accept(java.base@17.0.13/Native Method)
+	at sun.nio.ch.NioSocketImpl.accept(java.base@17.0.13/NioSocketImpl.java:760)
+	at java.net.ServerSocket.implAccept(java.base@17.0.13/ServerSocket.java:675)
+	at java.net.ServerSocket.platformImplAccept(java.base@17.0.13/ServerSocket.java:641)
+	at java.net.ServerSocket.implAccept(java.base@17.0.13/ServerSocket.java:617)
+	at java.net.ServerSocket.implAccept(java.base@17.0.13/ServerSocket.java:574)
+	at java.net.ServerSocket.accept(java.base@17.0.13/ServerSocket.java:532)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(java.rmi@17.0.13/TCPTransport.java:413)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(java.rmi@17.0.13/TCPTransport.java:377)
+	at java.lang.Thread.run(java.base@17.0.13/Thread.java:840)
+
+"RMI Reaper" #18 prio=5 os_prio=0 cpu=0.12ms elapsed=2527.87s tid=0x00007b930833b950 nid=0x1959d in Object.wait()  [0x00007b92ce1f4000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.13/Native Method)
+	- waiting on <0x00000000e0026be0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.13/ReferenceQueue.java:155)
+	- locked <0x00000000e0026be0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.13/ReferenceQueue.java:176)
+	at sun.rmi.transport.ObjectTable$Reaper.run(java.rmi@17.0.13/ObjectTable.java:352)
+	at java.lang.Thread.run(java.base@17.0.13/Thread.java:840)
+
+"RMI GC Daemon" #19 daemon prio=2 os_prio=0 cpu=0.40ms elapsed=2527.87s tid=0x00007b930833d7b0 nid=0x1959e in Object.wait()  [0x00007b92ce0f3000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.13/Native Method)
+	- waiting on <0x00000000e000a238> (a sun.rmi.transport.GC$LatencyLock)
+	at sun.rmi.transport.GC$Daemon.run(java.rmi@17.0.13/GC.java:127)
+	- locked <0x00000000e000a238> (a sun.rmi.transport.GC$LatencyLock)
+	at java.lang.Thread.run(java.base@17.0.13/Thread.java:840)
+	at jdk.internal.misc.InnocuousThread.run(java.base@17.0.13/InnocuousThread.java:162)
+
+"DestroyJavaVM" #20 prio=5 os_prio=0 cpu=256.78ms elapsed=2527.86s tid=0x00007b93080191d0 nid=0x1958a waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"RMI Scheduler(0)" #22 daemon prio=5 os_prio=0 cpu=2.67ms elapsed=2527.82s tid=0x00007b925c01cc70 nid=0x195a0 waiting on condition  [0x00007b92cdef1000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@17.0.13/Native Method)
+	- parking to wait for  <0x00000000e000e0a0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(java.base@17.0.13/LockSupport.java:252)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(java.base@17.0.13/AbstractQueuedSynchronizer.java:1679)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@17.0.13/ScheduledThreadPoolExecutor.java:1182)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(java.base@17.0.13/ScheduledThreadPoolExecutor.java:899)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(java.base@17.0.13/ThreadPoolExecutor.java:1062)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@17.0.13/ThreadPoolExecutor.java:1122)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@17.0.13/ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(java.base@17.0.13/Thread.java:840)
+
+"RMI TCP Connection(2)-127.0.0.1" #23 daemon prio=5 os_prio=0 cpu=2014448.93ms elapsed=2527.81s tid=0x00007b92740032a0 nid=0x195a5 runnable  [0x00007b92cdde8000]
+   java.lang.Thread.State: RUNNABLE
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:190)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:214)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:214)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:194)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:214)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:194)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:214)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:214)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:194)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:214)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:194)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:214)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:214)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:194)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:214)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:194)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:214)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:194)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:214)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:194)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.containsInternal(ConeInferenceContext.kt:214)
+	at org.jetbrains.kotlin.fir.types.ConeInferenceContext.contains(ConeInferenceContext.kt:182)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.TrivialConstraintTypeInferenceOracle.contains(TrivialConstraintTypeInferenceOracle.kt)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.TrivialConstraintTypeInferenceOracle.containsOnlyNonNullableNothing(TrivialConstraintTypeInferenceOracle.kt:67)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.TrivialConstraintTypeInferenceOracle.isGeneratedConstraintTrivial(TrivialConstraintTypeInferenceOracle.kt:56)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.ConstraintIncorporator.addNewConstraint(ConstraintIncorporator.kt:275)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.ConstraintIncorporator.approximateIfNeededAndAddNewConstraint(ConstraintIncorporator.kt:223)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.ConstraintIncorporator.generateNewConstraint(ConstraintIncorporator.kt:193)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.ConstraintIncorporator.insideOtherConstraint(ConstraintIncorporator.kt:117)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.ConstraintIncorporator.incorporate(ConstraintIncorporator.kt:55)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.ConstraintInjector.processGivenConstraints(ConstraintInjector.kt:243)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.ConstraintInjector.processConstraintsIgnoringForksData(ConstraintInjector.kt:196)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.ConstraintInjector.processConstraints(ConstraintInjector.kt:173)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.ConstraintInjector.processConstraints$default(ConstraintInjector.kt:168)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.ConstraintInjector.addSubTypeConstraintAndIncorporateIt(ConstraintInjector.kt:114)
+	at org.jetbrains.kotlin.resolve.calls.inference.components.ConstraintInjector.addInitialSubtypeConstraint(ConstraintInjector.kt:71)
+	at org.jetbrains.kotlin.resolve.calls.inference.model.NewConstraintSystemImpl.addSubtypeConstraint(NewConstraintSystemImpl.kt:199)
+	at org.jetbrains.kotlin.resolve.calls.inference.ConstraintSystemBuilderKt.addConstraintIfCompatible(ConstraintSystemBuilder.kt:100)
+	at org.jetbrains.kotlin.resolve.calls.inference.ConstraintSystemBuilderKt.addSubtypeConstraintIfCompatible(ConstraintSystemBuilder.kt:84)
+	at org.jetbrains.kotlin.fir.resolve.calls.stages.ArgumentCheckingProcessor.checkApplicabilityForArgumentType(ArgumentCheckingProcessor.kt:264)
+	at org.jetbrains.kotlin.fir.resolve.calls.stages.ArgumentCheckingProcessor.resolvePlainArgumentType(ArgumentCheckingProcessor.kt:200)
+	at org.jetbrains.kotlin.fir.resolve.calls.stages.ArgumentCheckingProcessor.resolvePlainArgumentType$default(ArgumentCheckingProcessor.kt:170)
+	at org.jetbrains.kotlin.fir.resolve.calls.stages.ArgumentCheckingProcessor.resolvePlainExpressionArgument(ArgumentCheckingProcessor.kt:167)
+	at org.jetbrains.kotlin.fir.resolve.calls.stages.ArgumentCheckingProcessor.resolvePlainExpressionArgument$default(ArgumentCheckingProcessor.kt:157)
+	at org.jetbrains.kotlin.fir.resolve.calls.stages.ArgumentCheckingProcessor.resolveArgumentExpression(ArgumentCheckingProcessor.kt:137)
+	at org.jetbrains.kotlin.fir.resolve.calls.stages.ArgumentCheckingProcessor.resolveArgumentExpression(ArgumentCheckingProcessor.kt:70)
+	at org.jetbrains.kotlin.fir.resolve.calls.stages.CheckArguments.resolveArgument(CheckArguments.kt:76)
+	at org.jetbrains.kotlin.fir.resolve.calls.stages.CheckArguments.check(CheckArguments.kt:33)
+	at org.jetbrains.kotlin.fir.resolve.calls.stages.ResolutionStageRunner$processCandidate$1.invokeSuspend(ResolutionStageRunner.kt:26)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at org.jetbrains.kotlin.fir.resolve.calls.stages.ResolutionStageRunner.processCandidate(ResolutionStageRunner.kt:39)
+	at org.jetbrains.kotlin.fir.resolve.calls.stages.ResolutionStageRunner.processCandidate$default(ResolutionStageRunner.kt:19)
+	at org.jetbrains.kotlin.fir.resolve.calls.candidate.CandidateCollector.consumeCandidate(CandidateCollector.kt:40)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.TowerScopeLevelProcessor.consumeCandidate(TowerLevelHandler.kt:90)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.TowerScopeLevel$TowerScopeLevelProcessor.consumeCandidate$default(TowerLevels.kt:53)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.MemberScopeTowerLevel.consumeCandidates(TowerLevels.kt:236)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.MemberScopeTowerLevel.processMembers(TowerLevels.kt:97)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.MemberScopeTowerLevel.processFunctionsByName(TowerLevels.kt:267)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.TowerLevelHandler.handleLevel(TowerLevelHandler.kt:61)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.FirBaseTowerResolveTask.processLevel(FirTowerResolveTask.kt:207)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.FirBaseTowerResolveTask.access$processLevel(FirTowerResolveTask.kt:64)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.FirBaseTowerResolveTask$processLevel$3.invokeSuspend(FirTowerResolveTask.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.TowerResolveManager.resumeTask(TowerResolveManager.kt:77)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.TowerResolveManager.runTasks(TowerResolveManager.kt:83)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.FirTowerResolver.runResolver(FirTowerResolver.kt:52)
+	at org.jetbrains.kotlin.fir.resolve.calls.tower.FirTowerResolver.runResolver(FirTowerResolver.kt:39)
+	at org.jetbrains.kotlin.fir.resolve.calls.FirCallResolver.collectCandidates(FirCallResolver.kt:205)
+	at org.jetbrains.kotlin.fir.resolve.calls.FirCallResolver.collectCandidates$default(FirCallResolver.kt:170)
+	at org.jetbrains.kotlin.fir.resolve.calls.FirCallResolver.resolveCallAndSelectCandidate(FirCallResolver.kt:85)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirExpressionsResolveTransformer.transformFunctionCallInternal$resolve(FirExpressionsResolveTransformer.kt:503)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirExpressionsResolveTransformer.transformFunctionCall(FirExpressionsResolveTransformer.kt:439)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformFunctionCall(FirAbstractBodyResolveTransformerDispatcher.kt:164)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformFunctionCall(FirAbstractBodyResolveTransformerDispatcher.kt:24)
+	at org.jetbrains.kotlin.fir.expressions.FirFunctionCall.transform(FirFunctionCall.kt:45)
+	at org.jetbrains.kotlin.fir.expressions.impl.FirReturnExpressionImpl.transformResult(FirReturnExpressionImpl.kt:56)
+	at org.jetbrains.kotlin.fir.expressions.impl.FirReturnExpressionImpl.transformChildren(FirReturnExpressionImpl.kt:45)
+	at org.jetbrains.kotlin.fir.expressions.impl.FirReturnExpressionImpl.transformChildren(FirReturnExpressionImpl.kt:30)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirExpressionsResolveTransformer.transformExpression(FirExpressionsResolveTransformer.kt:80)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformExpression(FirAbstractBodyResolveTransformerDispatcher.kt:130)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirControlFlowStatementsResolveTransformer.transformJump(FirControlFlowStatementsResolveTransformer.kt:185)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirControlFlowStatementsResolveTransformer.transformReturnExpression(FirControlFlowStatementsResolveTransformer.kt:206)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformReturnExpression(FirAbstractBodyResolveTransformerDispatcher.kt:693)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformReturnExpression(FirAbstractBodyResolveTransformerDispatcher.kt:24)
+	at org.jetbrains.kotlin.fir.expressions.FirReturnExpression.transform(FirReturnExpression.kt:35)
+	at org.jetbrains.kotlin.fir.expressions.FirExpressionUtilKt.transformStatementsIndexed(FirExpressionUtil.kt:198)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirExpressionsResolveTransformer.transformBlockInCurrentScope$resolve(FirExpressionsResolveTransformer.kt:589)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirExpressionsResolveTransformer.transformBlock(FirExpressionsResolveTransformer.kt:580)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformBlock(FirAbstractBodyResolveTransformerDispatcher.kt:191)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformBlock(FirAbstractBodyResolveTransformerDispatcher.kt:24)
+	at org.jetbrains.kotlin.fir.expressions.FirBlock.transform(FirBlock.kt:32)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirPartialBodyResolveTransformer.transformElement(FirPartialBodyResolveTransformer.kt:36)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirPartialBodyResolveTransformer.transformElement(FirPartialBodyResolveTransformer.kt:13)
+	at org.jetbrains.kotlin.fir.visitors.FirTransformer.transformBlock(FirTransformer.kt:191)
+	at org.jetbrains.kotlin.fir.expressions.FirBlock.transform(FirBlock.kt:32)
+	at org.jetbrains.kotlin.fir.declarations.impl.FirSimpleFunctionImpl.transformBody(FirSimpleFunctionImpl.kt:109)
+	at org.jetbrains.kotlin.fir.declarations.impl.FirSimpleFunctionImpl.transformBody(FirSimpleFunctionImpl.kt:32)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.transformFunction(FirDeclarationsResolveTransformer.kt:968)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.transformFunctionWithGivenSignature(FirDeclarationsResolveTransformer.kt:918)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.access$transformFunctionWithGivenSignature(FirDeclarationsResolveTransformer.kt:56)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.transformSimpleFunction$lambda$61$lambda$60$lambda$59(FirDeclarationsResolveTransformer.kt:910)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer$$Lambda$792/0x00007b92d463b670.invoke(Unknown Source)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.BodyResolveContext.forFunctionBody(BodyResolveContext.kt:1206)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.transformSimpleFunction(FirDeclarationsResolveTransformer.kt:908)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformSimpleFunction(FirAbstractBodyResolveTransformerDispatcher.kt:530)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformSimpleFunction(FirAbstractBodyResolveTransformerDispatcher.kt:24)
+	at org.jetbrains.kotlin.fir.declarations.FirSimpleFunction.transform(FirSimpleFunction.kt:55)
+	at org.jetbrains.kotlin.fir.visitors.FirTransformerUtilKt.transformInplace(FirTransformerUtil.kt:20)
+	at org.jetbrains.kotlin.fir.declarations.impl.FirRegularClassImpl.transformDeclarations(FirRegularClassImpl.kt:91)
+	at org.jetbrains.kotlin.fir.declarations.impl.FirRegularClassImpl.transformChildren(FirRegularClassImpl.kt:73)
+	at org.jetbrains.kotlin.fir.declarations.impl.FirRegularClassImpl.transformChildren(FirRegularClassImpl.kt:30)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformElement(FirAbstractBodyResolveTransformerDispatcher.kt:80)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformDeclarationContent(FirAbstractBodyResolveTransformerDispatcher.kt:431)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.transformDeclarationContent(FirDeclarationsResolveTransformer.kt:76)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.doTransformRegularClass$lambda$53(FirDeclarationsResolveTransformer.kt:837)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer$$Lambda$789/0x00007b92d463a7d0.invoke(Unknown Source)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.withRegularClass$lambda$54(FirDeclarationsResolveTransformer.kt:846)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer$$Lambda$790/0x00007b92d463a9f8.invoke(Unknown Source)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.BodyResolveContext.withRegularClass$lambda$16$lambda$15(BodyResolveContext.kt:1560)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.BodyResolveContext$$Lambda$788/0x00007b92d4637100.invoke(Unknown Source)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.BodyResolveContext.withScopesForClass(BodyResolveContext.kt:535)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.BodyResolveContext.withRegularClass(BodyResolveContext.kt:433)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.withRegularClass(FirDeclarationsResolveTransformer.kt:845)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.doTransformRegularClass(FirDeclarationsResolveTransformer.kt:836)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.transformRegularClass(FirDeclarationsResolveTransformer.kt:757)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformRegularClass(FirAbstractBodyResolveTransformerDispatcher.kt:503)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformRegularClass(FirAbstractBodyResolveTransformerDispatcher.kt:24)
+	at org.jetbrains.kotlin.fir.declarations.FirRegularClass.transform(FirRegularClass.kt:52)
+	at org.jetbrains.kotlin.fir.visitors.FirTransformerUtilKt.transformInplace(FirTransformerUtil.kt:20)
+	at org.jetbrains.kotlin.fir.declarations.impl.FirFileImpl.transformDeclarations(FirFileImpl.kt:80)
+	at org.jetbrains.kotlin.fir.declarations.impl.FirFileImpl.transformChildren(FirFileImpl.kt:65)
+	at org.jetbrains.kotlin.fir.declarations.impl.FirFileImpl.transformChildren(FirFileImpl.kt:29)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformElement(FirAbstractBodyResolveTransformerDispatcher.kt:80)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformDeclarationContent(FirAbstractBodyResolveTransformerDispatcher.kt:431)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.transformDeclarationContent(FirDeclarationsResolveTransformer.kt:76)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.doTransformFile$lambda$51(FirDeclarationsResolveTransformer.kt:809)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer$$Lambda$785/0x00007b92d4636a88.invoke(Unknown Source)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.withFile(FirDeclarationsResolveTransformer.kt:822)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.doTransformFile(FirDeclarationsResolveTransformer.kt:808)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirDeclarationsResolveTransformer.transformFile(FirDeclarationsResolveTransformer.kt:735)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformFile(FirAbstractBodyResolveTransformerDispatcher.kt:57)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirAbstractBodyResolveTransformerDispatcher.transformFile(FirAbstractBodyResolveTransformerDispatcher.kt:24)
+	at org.jetbrains.kotlin.fir.declarations.FirFile.transform(FirFile.kt:46)
+	at org.jetbrains.kotlin.fir.resolve.transformers.body.resolve.FirBodyResolveTransformerAdapter.transformFile(FirBodyResolveTransformerAdapters.kt:41)
+	at org.jetbrains.kotlin.fir.declarations.FirFile.transform(FirFile.kt:46)
+	at org.jetbrains.kotlin.fir.resolve.transformers.FirTransformerBasedResolveProcessor.processFile(FirResolveProcessor.kt:48)
+	at org.jetbrains.kotlin.fir.resolve.transformers.FirTotalResolveProcessor.process(FirTotalResolveProcessor.kt:36)
+	at org.jetbrains.kotlin.fir.pipeline.AnalyseKt.runResolution(analyse.kt:20)
+	at org.jetbrains.kotlin.fir.pipeline.FirUtilsKt.resolveAndCheckFir(firUtils.kt:76)
+	at org.jetbrains.kotlin.fir.pipeline.FirUtilsKt.buildResolveAndCheckFirViaLightTree(firUtils.kt:88)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.compileModuleToAnalyzedFir(jvmCompilerPipeline.kt:319)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.compileModulesUsingFrontendIrAndLightTree(jvmCompilerPipeline.kt:118)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:148)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:43)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:103)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:49)
+	at org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:101)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:464)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:73)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:506)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:423)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileNonIncrementally(IncrementalCompilerRunner.kt:301)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:129)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:675)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:92)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1660)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(java.base@17.0.13/Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(java.base@17.0.13/NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(java.base@17.0.13/DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(java.base@17.0.13/Method.java:569)
+	at sun.rmi.server.UnicastServerRef.dispatch(java.rmi@17.0.13/UnicastServerRef.java:360)
+	at sun.rmi.transport.Transport$1.run(java.rmi@17.0.13/Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(java.rmi@17.0.13/Transport.java:197)
+	at java.security.AccessController.executePrivileged(java.base@17.0.13/AccessController.java:807)
+	at java.security.AccessController.doPrivileged(java.base@17.0.13/AccessController.java:712)
+	at sun.rmi.transport.Transport.serviceCall(java.rmi@17.0.13/Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(java.rmi@17.0.13/TCPTransport.java:587)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(java.rmi@17.0.13/TCPTransport.java:828)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(java.rmi@17.0.13/TCPTransport.java:705)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$125/0x00007b92d40c48b8.run(java.rmi@17.0.13/Unknown Source)
+	at java.security.AccessController.executePrivileged(java.base@17.0.13/AccessController.java:776)
+	at java.security.AccessController.doPrivileged(java.base@17.0.13/AccessController.java:399)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(java.rmi@17.0.13/TCPTransport.java:704)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@17.0.13/ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@17.0.13/ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(java.base@17.0.13/Thread.java:840)
+
+"RMI RenewClean-[127.0.0.1:43963,org.jetbrains.kotlin.daemon.common.LoopbackNetworkInterface$ClientLoopbackSocketFactory@5a4c8563]" #24 daemon prio=5 os_prio=0 cpu=10.74ms elapsed=2527.74s tid=0x00007b92500279f0 nid=0x195a8 in Object.wait()  [0x00007b92cdcef000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(java.base@17.0.13/Native Method)
+	- waiting on <0x00000000e0034800> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(java.base@17.0.13/ReferenceQueue.java:155)
+	- locked <0x00000000e0034800> (a java.lang.ref.ReferenceQueue$Lock)
+	at sun.rmi.transport.DGCClient$EndpointEntry$RenewCleanThread.run(java.rmi@17.0.13/DGCClient.java:559)
+	at java.lang.Thread.run(java.base@17.0.13/Thread.java:840)
+
+"Attach Listener" #25 daemon prio=9 os_prio=0 cpu=2.18ms elapsed=2509.70s tid=0x00007b92b4000ea0 nid=0x1978c waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"RMI TCP Connection(4)-127.0.0.1" #27 daemon prio=5 os_prio=0 cpu=3.62ms elapsed=695.11s tid=0x00007b9274004330 nid=0x1bb49 waiting on condition  [0x00007b92cdff1000]
+   java.lang.Thread.State: WAITING (parking)
+	at jdk.internal.misc.Unsafe.park(java.base@17.0.13/Native Method)
+	- parking to wait for  <0x00000000e04535b8> (a java.util.concurrent.locks.ReentrantReadWriteLock$NonfairSync)
+	at java.util.concurrent.locks.LockSupport.park(java.base@17.0.13/LockSupport.java:211)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(java.base@17.0.13/AbstractQueuedSynchronizer.java:715)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireShared(java.base@17.0.13/AbstractQueuedSynchronizer.java:1027)
+	at java.util.concurrent.locks.ReentrantReadWriteLock$ReadLock.lock(java.base@17.0.13/ReentrantReadWriteLock.java:738)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.getDaemonJVMOptions(CompileServiceImpl.kt:1231)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(java.base@17.0.13/Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(java.base@17.0.13/NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(java.base@17.0.13/DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(java.base@17.0.13/Method.java:569)
+	at sun.rmi.server.UnicastServerRef.dispatch(java.rmi@17.0.13/UnicastServerRef.java:360)
+	at sun.rmi.transport.Transport$1.run(java.rmi@17.0.13/Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(java.rmi@17.0.13/Transport.java:197)
+	at java.security.AccessController.executePrivileged(java.base@17.0.13/AccessController.java:807)
+	at java.security.AccessController.doPrivileged(java.base@17.0.13/AccessController.java:712)
+	at sun.rmi.transport.Transport.serviceCall(java.rmi@17.0.13/Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(java.rmi@17.0.13/TCPTransport.java:587)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(java.rmi@17.0.13/TCPTransport.java:828)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(java.rmi@17.0.13/TCPTransport.java:705)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$125/0x00007b92d40c48b8.run(java.rmi@17.0.13/Unknown Source)
+	at java.security.AccessController.executePrivileged(java.base@17.0.13/AccessController.java:776)
+	at java.security.AccessController.doPrivileged(java.base@17.0.13/AccessController.java:399)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(java.rmi@17.0.13/TCPTransport.java:704)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@17.0.13/ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@17.0.13/ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(java.base@17.0.13/Thread.java:840)
+
+"GC Thread#9" os_prio=0 cpu=438013.04ms elapsed=2527.28s tid=0x00007b92c8006240 nid=0x195b2 runnable  
+
+"GC Thread#8" os_prio=0 cpu=438788.85ms elapsed=2527.28s tid=0x00007b92c8005430 nid=0x195b1 runnable  
+
+"GC Thread#7" os_prio=0 cpu=440279.91ms elapsed=2527.28s tid=0x00007b92c8004a10 nid=0x195b0 runnable  
+
+"GC Thread#6" os_prio=0 cpu=438995.53ms elapsed=2527.28s tid=0x00007b92c8003ff0 nid=0x195af runnable  
+
+"GC Thread#5" os_prio=0 cpu=439677.39ms elapsed=2527.28s tid=0x00007b92c80035d0 nid=0x195ae runnable  
+
+"GC Thread#4" os_prio=0 cpu=439988.40ms elapsed=2527.28s tid=0x00007b92c8002bb0 nid=0x195ad runnable  
+
+"GC Thread#3" os_prio=0 cpu=439298.92ms elapsed=2527.28s tid=0x00007b92c8002190 nid=0x195ac runnable  
+
+"GC Thread#2" os_prio=0 cpu=438550.88ms elapsed=2527.28s tid=0x00007b92c8001980 nid=0x195ab runnable  
+
+"GC Thread#1" os_prio=0 cpu=439968.29ms elapsed=2527.28s tid=0x00007b92c8001360 nid=0x195aa runnable  
+
+"VM Periodic Task Thread" os_prio=0 cpu=597.03ms elapsed=2528.08s tid=0x00007b93080c70d0 nid=0x19598 waiting on condition  
+
+"VM Thread" os_prio=0 cpu=17290.12ms elapsed=2528.11s tid=0x00007b930805bf50 nid=0x1958d runnable  
+
+"GC Thread#0" os_prio=0 cpu=438894.13ms elapsed=2528.12s tid=0x00007b9308031020 nid=0x1958b runnable  
+
+JNI global refs: 19, weak refs: 0
+
