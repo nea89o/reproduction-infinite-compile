@@ -1,8 +1,16 @@
 package moe.nea.firm
 
 import ext.StringIdentifiable
-import kotlin.enums.enumEntries
 
+interface EnumRenderer<E: Any> {
+	companion object {
+		fun <E: Enum<E>> default() = object: EnumRenderer<E> {}
+	}
+}
+
+interface Codec<T> {
+
+}
 
 abstract class ManagedConfig {
 	protected fun <E : Any> choice(
