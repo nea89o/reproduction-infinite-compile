@@ -2,22 +2,22 @@ package moe.nea.firm
 
 import ext.JavaHelper
 
-interface EnumRenderer<E : Any> {
+interface InterfaceB<E> {
 	companion object {
-		fun <E : Enum<E>> default() = object : EnumRenderer<E> {}
+		fun <E : Enum<E>> default() = object : InterfaceB<E> {}
 	}
 }
 
-interface InterfaceA<T> {}
+interface InterfaceA<T>
 
 fun <E : Any> funA(
 	codec: InterfaceA<E>,
-	renderer: EnumRenderer<E>,
+	renderer: InterfaceB<E>,
 ) {}
 
-inline fun <reified E> choice() where E : Enum<E>, E : JavaHelper {
+inline fun <reified E> funB() where E : Enum<E>, E : JavaHelper {
 	return funA(
-		JavaHelper.createInterfaceA { enumValues<E>() },
-		EnumRenderer.default(),
+		JavaHelper.createInterfaceA(),
+		InterfaceB.default(),
 	)
 }
