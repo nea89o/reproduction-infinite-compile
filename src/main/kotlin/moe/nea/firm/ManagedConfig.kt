@@ -9,13 +9,16 @@ interface InterfaceB<E> {
 }
 
 interface InterfaceA<T>
+interface InterfaceC
+
+fun <E : InterfaceC> createInterfaceAKotlin():InterfaceA<E> = TODO()
 
 fun <E : Any> funA(
 	intA: InterfaceA<E>,
 	intB: InterfaceB<E>,
 ) {}
 
-fun <E> funB() where E : Enum<E>, E : JavaHelper {
+fun <E> funB() where E : Enum<E>, E : InterfaceC {
 	funA(
 		JavaHelper.createInterfaceA(),
 		InterfaceB.default(),
